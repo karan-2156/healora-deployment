@@ -46,7 +46,11 @@ app.set('trust proxy', 1);
 // Helmet sets ~15 HTTP headers that protect against common web vulnerabilities
 // (XSS, clickjacking, MIME sniffing, etc.) by default.
 // IMPROVEMENT: In production, configure a strict Content-Security-Policy here.
-app.use(helmet());
+app.use(
+  helmet({
+    crossOriginEmbedderPolicy: false
+  })
+);
 
 // ─────────────────────────────────────────────
 // 2.  CORS
