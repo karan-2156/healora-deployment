@@ -112,11 +112,8 @@ if (typeof google === "undefined") {
 }
 
 google.accounts.id.initialize({
-
-    client_id: "105173876303-eetfe46f0pmudduvm3o8b5hf3fsgmral.apps.googleusercontent.com",
-
+    client_id: "...",
     callback: handleGoogleResponse
-
 });
 
 const button = document.getElementById("googleButton");
