@@ -79,16 +79,13 @@ document.addEventListener("DOMContentLoaded", () => {
         `${message}, <span>${userName} 👋</span>`;
 
 
-        const profileImage = document.querySelector(".profile img");
-        const profileAvatar = document.getElementById("profileAvatar");
+        const profileImage = document.getElementById("profileImage");
+const profileAvatar = document.getElementById("profileAvatar");
 
-        
-        if (profileImage && storedUser) {
-
-            profileImage.src =
-                `https://ui-avatars.com/api/?name=${encodeURIComponent(storedUser.name)}&background=0B4F6C&color=fff`;
-
-        }
+if (profileImage && storedUser) {
+    profileImage.src =
+        `https://ui-avatars.com/api/?name=${encodeURIComponent(storedUser.name)}&background=0B4F6C&color=fff&size=128`;
+}
 
         if (profileAvatar) {
 
