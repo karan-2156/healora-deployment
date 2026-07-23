@@ -27,7 +27,7 @@ const topProfileImage = document.getElementById("topProfileImage");
 const themeStatus = document.getElementById("themeStatus");
 const themeSubStatus = document.getElementById("themeSubStatus");
 
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = "https://healora-deployment.onrender.com/api";
 
 function updateThemeCard(isDark) {
 

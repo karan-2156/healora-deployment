@@ -1,7 +1,7 @@
 /* ==========================================
    HEALORA DASHBOARD
 ========================================== */
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = "https://healora-deployment.onrender.com/api";
 
 /* Updates BOTH the number and the visual ring around it.
    Without this, the ring stays stuck at the CSS-hardcoded 94%

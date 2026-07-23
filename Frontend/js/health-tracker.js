@@ -12,7 +12,7 @@ async function loadHealthData() {
 
         // Later we'll replace this with a real backend API
         // Example:
-        // const response = await fetch("http://localhost:5000/api/health/latest");
+        // const response = await fetch("https://healora-deployment.onrender.com/api");
 
         // Temporary placeholder
         const data = null;

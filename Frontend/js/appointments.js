@@ -9,7 +9,7 @@ if (!token) {
     window.location.href = "login.html";
 }
 const storedUser = JSON.parse(localStorage.getItem("user"));
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = "https://healora-deployment.onrender.com/api";
 
 document.addEventListener("DOMContentLoaded",()=>{
 
