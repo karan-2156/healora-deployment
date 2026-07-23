@@ -112,7 +112,7 @@ if (typeof google === "undefined") {
 }
 
 google.accounts.id.initialize({
-    client_id: "...",
+    client_id: "426322584611-r4tnro13tul01sl0g8art0trqjgkas8r.apps.googleusercontent.com",
     callback: handleGoogleResponse
 });
 
