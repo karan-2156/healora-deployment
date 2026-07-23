@@ -48,6 +48,7 @@ app.set('trust proxy', 1);
 // IMPROVEMENT: In production, configure a strict Content-Security-Policy here.
 app.use(
   helmet({
+    contentSecurityPolicy: false,
     crossOriginEmbedderPolicy: false
   })
 );
