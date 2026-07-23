@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Healora | Emergency</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet"
+href="../css/emergency.css">
+
+</head>
+
+<body>
+
+<div class="background-blobs">
+
+<div class="blob blob1"></div>
+
+<div class="blob blob2"></div>
+
+<div class="blob blob3"></div>
+
+</div>
+
+<div class="emergency-layout">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<div class="logo-circle">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+</div>
+
+<h2>Healora</h2>
+
+</div>
+
+<nav>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+<a href="chatbot.html">
+
+<i class="fa-solid fa-robot"></i>
+
+<span>AI Assistant</span>
+
+</a>
+
+<a href="appointments.html">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+<span>Appointments</span>
+
+</a>
+
+<a href="symptom-checker.html">
+
+<i class="fa-solid fa-stethoscope"></i>
+
+<span>Symptom Checker</span>
+
+</a>
+
+<a href="notifications.html">
+
+<i class="fa-solid fa-bell"></i>
+
+<span>Notifications</span>
+
+</a>
+
+<a href="emergency.html" class="active">
+
+<i class="fa-solid fa-truck-medical"></i>
+
+<span>Emergency</span>
+
+</a>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+<span>Profile</span>
+
+</a>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</nav>
+
+<div class="logout" id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>Logout</span>
+
+</div>
+
+</aside>
+
+<!-- ================= CONTENT ================= -->
+
+<main class="content">
+
+<header class="topbar">
+
+<div>
+
+<h1>🚑 Emergency Assistance</h1>
+
+<p>
+
+Quick access to emergency services, hospitals and important medical information.
+
+</p>
+
+</div>
+
+<div class="top-actions">
+
+    <button class="icon-btn" id="notificationBtn">
+        <i class="fa-solid fa-bell"></i>
+    </button>
+
+    <button class="icon-btn" id="themeBtn">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <div id="profileBtn" class="profile-small"></div>
+
+</div>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero-card">
+
+<div class="hero-text">
+
+<h2>
+
+Need Immediate Help?
+
+</h2>
+
+<p>
+
+Use the emergency options below to contact ambulance services, emergency contacts, or locate nearby hospitals.
+
+</p>
+
+<button class="sos-btn">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+SOS EMERGENCY
+
+</button>
+
+</div>
+
+<div class="hero-icon">
+
+🚑
+
+</div>
+
+</section>
+
+<!-- ================= QUICK ACTIONS ================= -->
+
+<section class="quick-grid">
+
+<div class="quick-card ambulance">
+
+<i class="fa-solid fa-truck-medical"></i>
+
+<h3>Call Ambulance</h3>
+
+<p>Emergency medical assistance</p>
+
+<button>Call 108</button>
+
+</div>
+
+<div class="quick-card police">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>Police</h3>
+
+<p>Emergency police support</p>
+
+<button>Call 100</button>
+
+</div>
+
+<div class="quick-card fire">
+
+<i class="fa-solid fa-fire-extinguisher"></i>
+
+<h3>Fire Brigade</h3>
+
+<p>Fire emergency</p>
+
+<button>Call 101</button>
+
+</div>
+
+<div class="quick-card location">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<h3>Share Location</h3>
+
+<p>Send your live location</p>
+
+<button>Share</button>
+
+</div>
+
+</section>
+<!-- ================= NEARBY HOSPITALS ================= -->
+
+<section class="hospital-section">
+
+<h2>🏥 Nearby Hospitals</h2>
+
+<div class="hospital-grid">
+
+<div class="hospital-card">
+
+<h3>Apollo Hospital</h3>
+
+<p><i class="fa-solid fa-location-dot"></i> 2.3 km Away</p>
+
+<p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+
+<button class="hospital-btn">Get Directions</button>
+
+</div>
+
+<div class="hospital-card">
+
+<h3>Fortis Hospital</h3>
+
+<p><i class="fa-solid fa-location-dot"></i> 4.1 km Away</p>
+
+<p><i class="fa-solid fa-phone"></i> +91 98765 11111</p>
+
+<button class="hospital-btn">Get Directions</button>
+
+</div>
+
+<div class="hospital-card">
+
+<h3>City Care Hospital</h3>
+
+<p><i class="fa-solid fa-location-dot"></i> 5.6 km Away</p>
+
+<p><i class="fa-solid fa-phone"></i> +91 98765 22222</p>
+
+<button class="hospital-btn">Get Directions</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= MEDICAL INFO ================= -->
+
+<section class="medical-info">
+
+<h2>❤️ Medical Information</h2>
+
+<div class="info-grid">
+
+<div class="info-card">
+
+<h4>Blood Group</h4>
+
+<p>O+</p>
+
+</div>
+
+<div class="info-card">
+
+<h4>Allergies</h4>
+
+<p>None</p>
+
+</div>
+
+<div class="info-card">
+
+<h4>Medical Condition</h4>
+
+<p>Not Available</p>
+
+</div>
+
+<div class="info-card">
+
+<h4>Emergency Contact</h4>
+
+<p>+91 98765 00000</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FIRST AID ================= -->
+
+<section class="first-aid">
+
+<h2>🩹 First Aid Tips</h2>
+
+<div class="tips-grid">
+
+<div class="tip-card">
+
+<h3>❤️ Heart Attack</h3>
+
+<p>
+
+Call emergency services immediately and keep the person calm until help arrives.
+
+</p>
+
+</div>
+
+<div class="tip-card">
+
+<h3>🩸 Heavy Bleeding</h3>
+
+<p>
+
+Apply firm pressure with a clean cloth and seek medical attention immediately.
+
+</p>
+
+</div>
+
+<div class="tip-card">
+
+<h3>🔥 Burns</h3>
+
+<p>
+
+Cool the burn under running water for at least 20 minutes. Do not apply ice.
+
+</p>
+
+</div>
+
+<div class="tip-card">
+
+<h3>🤕 Fracture</h3>
+
+<p>
+
+Immobilize the injured area and avoid moving the person unnecessarily.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="../js/emergency.js"></script>
+
+</main>
+
+</div>
+
+<div id="notificationPopup" class="notification-popup">
+
+    <h3>🔔 Notifications</h3>
+
+    <div id="notificationList">
+
+        <p>No notifications yet.</p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Healora | Create Account</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/auth.css">
+
+</head>
+
+<body>
+
+<div class="auth-background">
+
+<div class="blob blob-one"></div>
+
+<div class="blob blob-two"></div>
+
+<div class="blob blob-three"></div>
+
+</div>
+
+<main class="auth-container">
+
+<section class="auth-brand">
+
+<a href="../index.html" class="auth-logo">
+
+<span class="logo-icon">❤️</span>
+
+Healora
+
+</a>
+
+<div class="brand-content">
+
+<h1>
+
+Start Your
+<br>
+Health Journey
+
+</h1>
+
+<p>
+
+Create your Healora account and access AI-powered healthcare,
+medicine reminders, reports and your personal health dashboard.
+
+</p>
+
+<div class="health-orb">
+
+<div class="orb-ring"></div>
+
+<div class="orb-core">
+
+🩺
+
+</div>
+
+</div>
+
+<div class="floating-health-card card-one">
+
+🧠
+
+<span>
+
+AI Assistant
+
+<strong>24/7 Available</strong>
+
+</span>
+
+</div>
+
+<div class="floating-health-card card-two">
+
+📊
+
+<span>
+
+Health Reports
+
+<strong>Always Secure</strong>
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="auth-card">
+
+<div class="card-header">
+
+<h2>Create Account</h2>
+
+<p>
+
+Join Healora and manage your health smarter.
+
+</p>
+
+</div>
+
+<form id="signupForm">
+
+    <div class="input-group">
+
+        <label>Full Name</label>
+
+        <div class="input-box">
+
+            <span>👤</span>
+
+            <input
+                type="text"
+                id="signupName"
+                placeholder="Enter your full name"
+                required>
+
+        </div>
+
+    </div>
+
+    <div class="input-group">
+
+        <label>Email Address</label>
+
+        <div class="input-box">
+
+            <span>📧</span>
+
+            <input
+                type="email"
+                id="signupEmail"
+                placeholder="Enter your email"
+                required>
+
+        </div>
+
+    </div>
+
+    <div class="input-group">
+
+        <label>Password</label>
+
+        <div class="input-box">
+
+            <span>🔒</span>
+
+            <input
+                type="password"
+                id="signupPassword"
+                placeholder="Create password"
+                required>
+
+            <button
+                type="button"
+                class="show-password"
+                id="toggleSignupPassword">
+
+                👁
+
+            </button>
+
+        </div>
+
+<div class="password-feedback">
+
+    <div class="password-strength">
+
+        <div class="strength-bar">
+            <div id="strengthFill"></div>
+        </div>
+
+        <p id="strengthText"></p>
+
+    </div>
+
+    <div class="password-rules" id="passwordRules">
+
+        <p id="ruleLength">○ Minimum 8 characters</p>
+
+        <p id="ruleUpper">○ One uppercase letter</p>
+
+        <p id="ruleLower">○ One lowercase letter</p>
+
+        <p id="ruleNumber">○ One number</p>
+
+        <p id="ruleSpecial">○ One special character</p>
+
+    </div>
+
+</div>
+
+
+
+    </div>
+
+    <div class="input-group">
+
+        <label>Confirm Password</label>
+
+        <div class="input-box">
+
+            <span>🔐</span>
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm password"
+                required>
+
+        </div>
+
+        <p id="confirmMessage" class="confirm-message"></p>
+
+    </div>
+
+    <div class="input-group">
+
+        <label class="remember">
+
+            <input type="checkbox" required>
+
+            <span>
+
+                I agree to the Terms & Privacy Policy
+
+            </span>
+
+        </label>
+
+    </div>
+
+    <div id="signupError" class="form-message"></div>
+
+    <button
+        type="submit"
+        class="auth-btn">
+
+        <span>
+
+            Create Account
+
+        </span>
+
+    </button>
+
+    <div class="divider">
+
+        <span>OR</span>
+
+    </div>
+
+    <div class="google-btn-wrapper">
+    <div id="googleButton"></div>
+</div>
+    <p class="switch-page">
+
+        Already have an account?
+
+        <a href="login.html">
+
+            Login
+
+        </a>
+
+    </p>
+
+</form>
+</section>
+
+</main>
+
+<script src="https://accounts.google.com/gsi/client" defer></script>
+<script src="../js/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Healora | AI Symptom Checker</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet"
+href="../css/symptom-checker.css">
+
+</head>
+
+<body>
+
+<div class="background-blobs">
+
+<div class="blob blob1"></div>
+
+<div class="blob blob2"></div>
+
+<div class="blob blob3"></div>
+
+</div>
+
+<div class="symptom-layout">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<div class="logo-circle">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+</div>
+
+<h2>Healora</h2>
+
+</div>
+
+<nav>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+<a href="chatbot.html">
+
+<i class="fa-solid fa-robot"></i>
+
+<span>AI Assistant</span>
+
+</a>
+
+<a href="reports.html">
+
+<i class="fa-solid fa-file-medical"></i>
+
+<span>Reports</span>
+
+</a>
+
+<a href="reminder.html">
+
+<i class="fa-solid fa-bell"></i>
+
+<span>Reminders</span>
+
+</a>
+
+<a href="appointments.html">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+<span>Appointments</span>
+
+</a>
+
+<a href="symptom-checker.html" class="active">
+
+<i class="fa-solid fa-stethoscope"></i>
+
+<span>Symptom Checker</span>
+
+</a>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+<span>Profile</span>
+
+</a>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</nav>
+
+<div class="logout">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>Logout</span>
+
+</div>
+
+</aside>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<main class="content">
+
+<header class="topbar">
+
+<div>
+
+<h1>🩺 AI Symptom Checker</h1>
+
+<p>
+
+Describe your symptoms and receive an AI-powered health assessment.
+
+</p>
+
+</div>
+
+<div class="top-actions">
+
+<button class="icon-btn">
+
+<i class="fa-solid fa-bell"></i>
+
+</button>
+
+<button class="icon-btn">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+<div class="profile-small">
+
+<img src="../assets/avatars/default-avatar.png"
+alt="Profile">
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero-card">
+
+<div class="hero-text">
+
+<h2>
+
+Understand Your Symptoms Smarter
+
+</h2>
+
+<p>
+
+Add your symptoms, choose the affected body area, rate the pain level, and let Healora AI generate a preliminary health assessment.
+
+</p>
+
+<button class="start-check-btn">
+
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+
+Start AI Check
+
+</button>
+
+</div>
+
+<div class="hero-icon">
+
+🤖
+
+</div>
+
+</section>
+
+<!-- ================= INPUT FORM ================= -->
+
+<section class="checker-card">
+
+<h2>
+
+Enter Your Symptoms
+
+</h2>
+
+<div class="form-grid">
+
+<div class="input-group">
+
+<label>Symptom</label>
+
+<input
+
+type="text"
+
+id="symptomInput"
+
+placeholder="e.g. Fever, Headache">
+
+</div>
+
+<div class="input-group">
+
+<label>Body Area</label>
+
+<select id="bodyPart">
+
+<option>Head</option>
+
+<option>Chest</option>
+
+<option>Stomach</option>
+
+<option>Back</option>
+
+<option>Leg</option>
+
+<option>Whole Body</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>Duration</label>
+
+<select id="duration">
+
+<option>1 Day</option>
+
+<option>2-3 Days</option>
+
+<option>1 Week</option>
+
+<option>More than 1 Week</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>Pain Level</label>
+
+<input
+
+type="range"
+
+id="painRange"
+
+min="1"
+
+max="10"
+
+value="5">
+
+<span id="painValue">5 / 10</span>
+
+</div>
+
+</div>
+
+<button class="add-symptom">
+
+<i class="fa-solid fa-plus"></i>
+
+Add Symptom
+
+</button>
+
+</section>
+<!-- ================= SELECTED SYMPTOMS ================= -->
+
+<section class="symptom-list-card">
+
+<h2>
+
+📋 Selected Symptoms
+
+</h2>
+
+<div id="symptomList" class="symptom-list">
+
+<div class="empty-state">
+
+No symptoms added yet.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= AI RESULT ================= -->
+
+<section class="result-card">
+
+<div class="result-header">
+
+<h2>
+
+🤖 AI Health Assessment
+
+</h2>
+
+<p>
+
+This is an AI-generated preliminary assessment and is not a medical diagnosis.
+
+</p>
+
+</div>
+
+<div class="result-grid">
+
+<div class="result-box">
+
+<h4>Possible Condition</h4>
+
+<h3 id="condition">
+
+Waiting for Analysis...
+
+</h3>
+
+</div>
+
+<div class="result-box">
+
+<h4>Confidence</h4>
+
+<h3 id="confidence">
+
+0%
+
+</h3>
+
+</div>
+
+<div class="result-box">
+
+<h4>Severity</h4>
+
+<span id="severity" class="severity low">
+
+Low
+
+</span>
+
+</div>
+
+<div class="result-box">
+
+<h4>Recommended Specialist</h4>
+
+<h3 id="doctor">
+
+General Physician
+
+</h3>
+
+</div>
+
+</div>
+
+<div class="remedy-card">
+
+<h3>
+
+💊 Suggested Home Care
+
+</h3>
+
+<ul id="remedyList">
+
+<li>Complete the symptom check to receive suggestions.</li>
+
+</ul>
+
+</div>
+
+<div class="action-buttons">
+
+<button class="analyze-btn">
+
+<i class="fa-solid fa-brain"></i>
+
+Analyze Symptoms
+
+</button>
+
+<button class="report-btn">
+
+<i class="fa-solid fa-file-arrow-down"></i>
+
+Generate Report
+
+</button>
+
+<button class="appointment-btn">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+Book Appointment
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= DISCLAIMER ================= -->
+
+<section class="disclaimer-card">
+
+<div class="warning-icon">
+
+⚠️
+
+</div>
+
+<div>
+
+<h3>Medical Disclaimer</h3>
+
+<p>
+
+Healora AI provides informational guidance only. Always consult a qualified healthcare professional for diagnosis, treatment, or emergencies.
+
+</p>
+
+</div>
+
+</section>
+
+<script src="../js/symptom-checker.js"></script>
+
+</main>
+
+</div>
+
+</body>
+
+</html>

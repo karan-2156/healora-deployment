@@ -1,0 +1,2056 @@
+/* ===========================================
+   HEALORA DASHBOARD
+   dashboard.css
+=========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ============ RESET ============ */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Inter',sans-serif;
+
+background:#F4FCFD;
+
+color:#14313F;
+
+overflow-x:hidden;
+
+min-height:100vh;
+
+}
+
+/* ============ VARIABLES ============ */
+
+:root{
+
+--primary:#0B4F6C;
+
+--secondary:#14B8A6;
+
+--accent:#6EE7E7;
+
+--white:#ffffff;
+
+--glass:rgba(255,255,255,.65);
+
+--glassBorder:rgba(255,255,255,.45);
+
+--shadow:0 20px 50px rgba(11,79,108,.12);
+
+--radius:28px;
+
+}
+
+/* ============ BACKGROUND ============ */
+
+.background-blobs{
+
+position:fixed;
+
+inset:0;
+
+overflow:hidden;
+
+z-index:-2;
+
+background:
+linear-gradient(135deg,#F8FFFF,#EEF8FA);
+
+}
+
+.blob{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(70px);
+
+opacity:.45;
+
+animation:blobMove 16s ease-in-out infinite;
+
+}
+
+.blob1{
+
+width:420px;
+
+height:420px;
+
+background:#14B8A6;
+
+top:-120px;
+
+left:-120px;
+
+}
+
+.blob2{
+
+width:340px;
+
+height:340px;
+
+background:#A7F3F0;
+
+bottom:-120px;
+
+right:-100px;
+
+animation-delay:4s;
+
+}
+
+.blob3{
+
+width:260px;
+
+height:260px;
+
+background:#C7F9FF;
+
+left:45%;
+
+top:30%;
+
+animation-delay:8s;
+
+}
+
+@keyframes blobMove{
+
+0%{
+
+transform:translate(0,0) scale(1);
+
+}
+
+50%{
+
+transform:translate(45px,-40px) scale(1.15);
+
+}
+
+100%{
+
+transform:translate(0,0) scale(1);
+
+}
+
+}
+
+/* ============ MAIN LAYOUT ============ */
+
+.dashboard{
+
+display:grid;
+
+grid-template-columns:280px 1fr;
+
+min-height:100vh;
+
+}
+
+/* ============ SIDEBAR ============ */
+
+.sidebar{
+
+background:rgba(255,255,255,.70);
+
+backdrop-filter:blur(25px);
+
+border-right:1px solid rgba(255,255,255,.45);
+
+padding:28px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:space-between;
+
+box-shadow:var(--shadow);
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:16px;
+
+margin-bottom:50px;
+
+}
+
+.logo-circle{
+
+width:58px;
+
+height:58px;
+
+border-radius:18px;
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+font-size:24px;
+
+}
+
+.logo h2{
+
+font-size:28px;
+
+font-weight:800;
+
+color:var(--primary);
+
+}
+
+.sidebar nav{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.sidebar nav a{
+
+display:flex;
+
+align-items:center;
+
+gap:16px;
+
+padding:16px 20px;
+
+border-radius:18px;
+
+cursor:pointer;
+
+transition:.35s;
+
+font-weight:600;
+
+color:#35505B;
+
+text-decoration:none;
+
+}
+
+.sidebar nav a:hover{
+
+background:#E9FBFA;
+
+transform:translateX(8px);
+
+}
+
+.sidebar nav a.active{
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
+
+color:white;
+
+}
+
+.logout{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+padding:18px;
+
+border-radius:18px;
+
+cursor:pointer;
+
+transition:.35s;
+
+font-weight:600;
+
+}
+
+.logout:hover{
+
+background:#FFECEC;
+
+color:#EF4444;
+
+}
+/* ===========================================
+   TOP BAR
+=========================================== */
+
+.content{
+
+padding:35px;
+
+}
+
+.topbar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:40px;
+
+}
+
+.topbar h1{
+
+font-size:38px;
+
+font-weight:800;
+
+color:var(--primary);
+
+}
+
+.topbar h1 span{
+
+color:var(--secondary);
+
+}
+
+.topbar p{
+
+margin-top:8px;
+
+color:#64748B;
+
+font-size:16px;
+
+}
+
+.top-actions{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.icon-btn{
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.7);
+
+backdrop-filter:blur(20px);
+
+cursor:pointer;
+
+font-size:20px;
+
+transition:.35s;
+
+box-shadow:var(--shadow);
+
+}
+
+.icon-btn:hover{
+
+transform:translateY(-5px);
+
+background:var(--secondary);
+
+color:white;
+
+}
+
+.profile img{
+
+width:58px;
+
+height:58px;
+
+border-radius:50%;
+
+border:4px solid white;
+
+box-shadow:var(--shadow);
+
+}
+
+
+/* ===========================================
+   HERO
+=========================================== */
+
+.hero{
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:30px;
+
+margin-bottom:35px;
+
+}
+
+.hero-left{
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
+
+border-radius:32px;
+
+padding:50px;
+
+color:white;
+
+position:relative;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+}
+
+.hero-left::before{
+
+content:"";
+
+position:absolute;
+
+width:260px;
+
+height:260px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:50%;
+
+right:-80px;
+
+top:-80px;
+
+}
+
+.hero-left h2{
+
+font-size:46px;
+
+font-weight:800;
+
+line-height:1.2;
+
+margin-bottom:18px;
+
+}
+
+.hero-left h2 span{
+
+display:block;
+
+color:#D8FFFB;
+
+}
+
+.hero-left p{
+
+font-size:17px;
+
+line-height:1.8;
+
+max-width:550px;
+
+opacity:.95;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:18px;
+
+margin-top:35px;
+
+}
+
+.primary-btn{
+
+background:white;
+
+color:var(--primary);
+
+border:none;
+
+padding:16px 30px;
+
+border-radius:18px;
+
+font-size:16px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.primary-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.secondary-btn{
+
+background:transparent;
+
+border:2px solid rgba(255,255,255,.45);
+
+color:white;
+
+padding:16px 30px;
+
+border-radius:18px;
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.secondary-btn:hover{
+
+background:white;
+
+color:var(--primary);
+
+}
+
+
+/* ===========================================
+   HEALTH SCORE
+=========================================== */
+
+.health-score{
+
+background:rgba(255,255,255,.72);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+padding:35px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+box-shadow:var(--shadow);
+
+}
+
+.circle{
+
+width:180px;
+
+height:180px;
+
+border-radius:50%;
+
+background:conic-gradient(
+
+var(--secondary) 0%,
+
+var(--secondary) 94%,
+
+#E5E7EB 94%
+
+);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+.circle::before{
+
+content:"";
+
+position:absolute;
+
+width:140px;
+
+height:140px;
+
+border-radius:50%;
+
+background:white;
+
+}
+
+.value{
+
+position:relative;
+
+font-size:42px;
+
+font-weight:800;
+
+color:var(--primary);
+
+z-index:2;
+
+}
+
+.health-score h3{
+
+font-size:24px;
+
+margin-bottom:8px;
+
+color:var(--primary);
+
+}
+
+.health-score p{
+
+color:#10B981;
+
+font-weight:700;
+
+}
+/* ===========================================
+   HEALTH STATS
+=========================================== */
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:22px;
+
+margin-bottom:35px;
+
+}
+
+.stat-card{
+
+background:rgba(255,255,255,.72);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.45);
+
+border-radius:24px;
+
+padding:24px;
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+box-shadow:var(--shadow);
+
+transition:.35s;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 25px 55px rgba(11,79,108,.18);
+
+}
+
+.stat-icon{
+
+width:70px;
+
+height:70px;
+
+border-radius:20px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:28px;
+
+color:white;
+
+}
+
+.bmi{background:#F59E0B;}
+
+.calories{background:#EF4444;}
+
+.sleep{background:#8B5CF6;}
+
+.steps{background:#14B8A6;}
+
+.stat-info h3{
+
+font-size:15px;
+
+color:#64748B;
+
+margin-bottom:6px;
+
+}
+
+.stat-info h2{
+
+font-size:28px;
+
+color:var(--primary);
+
+margin-bottom:6px;
+
+}
+
+.steps-control{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+.stepper-btn{
+
+width:28px;
+
+height:28px;
+
+border-radius:50%;
+
+border:1px solid rgba(11,79,108,.2);
+
+background:rgba(255,255,255,.6);
+
+color:var(--primary);
+
+font-size:16px;
+
+font-weight:700;
+
+cursor:pointer;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+transition:.25s;
+
+}
+
+.stepper-btn:hover{
+
+background:var(--primary);
+
+color:#fff;
+
+}
+
+.positive{
+
+color:#10B981;
+
+font-weight:700;
+
+}
+
+/* ===========================================
+   DASHBOARD GRID
+=========================================== */
+
+.dashboard-grid{
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:25px;
+
+margin-bottom:35px;
+
+}
+
+.left-column,
+.right-column{
+
+display:flex;
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+/* ===========================================
+   GLASS CARD
+=========================================== */
+
+.glass-card{
+
+background:rgba(255,255,255,.72);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.45);
+
+border-radius:28px;
+
+padding:28px;
+
+box-shadow:var(--shadow);
+
+transition:.35s;
+
+}
+
+.glass-card:hover{
+
+transform:translateY(-6px);
+
+}
+
+/* ===========================================
+   CARD HEADER
+=========================================== */
+
+.card-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+.card-header h2{
+
+font-size:22px;
+
+color:var(--primary);
+
+}
+
+/* ===========================================
+   AI ASSISTANT
+=========================================== */
+
+.ai-card p{
+
+color:#64748B;
+
+line-height:1.7;
+
+margin-bottom:20px;
+
+}
+
+.ai-input{
+
+display:flex;
+
+gap:12px;
+
+margin-bottom:20px;
+
+}
+
+.ai-input input{
+
+flex:1;
+
+height:58px;
+
+border:none;
+
+outline:none;
+
+background:#F8FAFC;
+
+border-radius:16px;
+
+padding:0 18px;
+
+font-size:15px;
+
+}
+
+.ai-input button{
+
+width:58px;
+
+border:none;
+
+border-radius:16px;
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
+
+color:white;
+
+cursor:pointer;
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+.ai-input button:hover{
+
+transform:scale(1.05);
+
+}
+
+.quick-actions{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+}
+
+.quick-actions button{
+
+border:none;
+
+padding:10px 18px;
+
+border-radius:14px;
+
+background:#EEF8FA;
+
+cursor:pointer;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.quick-actions button:hover{
+
+background:var(--secondary);
+
+color:white;
+
+}
+
+/* ===========================================
+   MEDICINE LIST
+=========================================== */
+
+.medicine-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.medicine-item{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:18px;
+
+border-radius:18px;
+
+background:#F8FAFC;
+
+}
+
+.medicine-time{
+
+font-weight:700;
+
+color:var(--primary);
+
+width:90px;
+
+}
+
+.medicine-info{
+
+flex:1;
+
+}
+
+.medicine-info h4{
+
+margin-bottom:6px;
+
+}
+
+.medicine-info p{
+
+color:#64748B;
+
+font-size:14px;
+
+}
+
+.status{
+
+width:28px;
+
+height:28px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.status.done{
+
+background:#10B981;
+
+color:white;
+
+}
+
+.status.pending{
+
+border:none;
+
+width:auto;
+
+height:auto;
+
+background:none;
+
+}
+
+.markTakenBtn{
+
+padding:10px 18px;
+
+border:none;
+
+border-radius:12px;
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
+
+color:white;
+
+font-weight:600;
+
+font-size:14px;
+
+cursor:pointer;
+
+transition:.25s;
+
+box-shadow:0 6px 16px rgba(20,184,166,.25);
+
+}
+
+.markTakenBtn:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 10px 20px rgba(20,184,166,.35);
+
+}
+
+.markTakenBtn:active{
+
+transform:scale(.96);
+
+}
+
+/* ===========================================
+   APPOINTMENT
+=========================================== */
+
+.appointment-card{
+
+text-align:center;
+
+}
+
+.appointment-card h3{
+
+font-size:28px;
+
+color:var(--primary);
+
+margin:15px 0 6px;
+
+}
+
+.appointment-date,
+.appointment-time{
+
+margin:12px 0;
+
+font-weight:700;
+
+color:#14B8A6;
+
+}
+
+/* ===========================================
+   WATER TRACKER
+=========================================== */
+
+.water-progress{
+
+display:flex;
+
+justify-content:space-between;
+
+margin:30px 0;
+
+}
+
+.glass{
+
+width:36px;
+
+height:70px;
+
+border-radius:12px;
+
+background:#E5E7EB;
+
+transition:.3s;
+
+}
+
+.glass.active{
+
+background:linear-gradient(
+180deg,
+#6EE7E7,
+#14B8A6
+);
+
+box-shadow:0 10px 20px rgba(20,184,166,.25);
+
+}
+
+.water-card p{
+
+text-align:center;
+
+font-weight:700;
+
+color:var(--primary);
+
+}
+/* ===========================================
+   BOTTOM GRID
+=========================================== */
+
+.bottom-grid{
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:25px;
+
+margin-bottom:35px;
+
+}
+
+/* ===========================================
+   WEEKLY CHART
+=========================================== */
+
+.chart-placeholder{
+
+margin-top:25px;
+
+}
+
+.chart-bars{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    height:220px;
+    padding:20px 10px 0;
+}
+
+.bar{
+    width:40px;
+    border-radius:12px 12px 0 0;
+    background:linear-gradient(180deg,#2dd4bf,#0f766e);
+    position:relative;
+    transition:.3s;
+}
+
+.bar-value{
+    position:absolute;
+    top:-25px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:12px;
+    font-weight:600;
+    color:#0f172a;
+}
+
+@keyframes growBar{
+
+from{
+
+height:0;
+
+}
+
+}
+
+.days{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-top:15px;
+
+color:#64748B;
+
+font-weight:600;
+
+}
+
+/* ===========================================
+   ECG CARD
+=========================================== */
+
+.ecg-container{
+
+position:relative;
+
+width:100%;
+
+height:140px;
+
+overflow:hidden;
+
+margin:25px 0;
+
+background:#F8FAFC;
+
+border-radius:18px;
+
+}
+
+.ecg-line{
+
+position:absolute;
+
+top:50%;
+
+left:-100%;
+
+width:200%;
+
+height:3px;
+
+background:
+repeating-linear-gradient(
+90deg,
+transparent 0 30px,
+#EF4444 30px 40px,
+transparent 40px 80px
+);
+
+animation:ecgMove 4s linear infinite;
+
+}
+
+@keyframes ecgMove{
+
+from{
+
+transform:translateX(0);
+
+}
+
+to{
+
+transform:translateX(50%);
+
+}
+
+}
+
+.ecg-info{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-top:15px;
+
+}
+
+.ecg-info h3{
+
+font-size:15px;
+
+color:#64748B;
+
+margin-bottom:6px;
+
+}
+
+.ecg-info p{
+
+font-weight:700;
+
+font-size:18px;
+
+color:var(--primary);
+
+}
+
+/* ===========================================
+   RECENT ACTIVITY
+=========================================== */
+
+.activity-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.activity{
+
+display:flex;
+
+align-items:center;
+
+gap:16px;
+
+padding:16px;
+
+border-radius:18px;
+
+background:#F8FAFC;
+
+transition:.3s;
+
+}
+
+.activity:hover{
+
+transform:translateX(6px);
+
+}
+
+.activity-icon{
+
+width:55px;
+
+height:55px;
+
+border-radius:16px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:24px;
+
+background:#EEF8FA;
+
+}
+
+.activity h4{
+
+margin-bottom:5px;
+
+color:var(--primary);
+
+}
+
+.activity p{
+
+font-size:14px;
+
+color:#64748B;
+
+}
+
+/* ===========================================
+   QUICK ACTIONS
+=========================================== */
+
+.quick-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:16px;
+
+margin-top:20px;
+
+}
+
+.quick-grid button,
+.quick-grid a{
+
+border:none;
+
+padding:18px;
+
+border-radius:18px;
+
+background:#EEF8FA;
+
+cursor:pointer;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+font-size:26px;
+
+font-weight:600;
+
+transition:.35s;
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+.quick-grid button span,
+.quick-grid a span{
+
+font-size:14px;
+
+color:var(--primary);
+
+}
+
+.quick-grid button:hover,
+.quick-grid a:hover{
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
+
+color:white;
+
+transform:translateY(-6px);
+
+}
+
+.quick-grid button:hover span,
+.quick-grid a:hover span{
+
+color:white;
+
+}
+/* ===========================================
+   FOOTER
+=========================================== */
+
+.dashboard-footer{
+
+text-align:center;
+
+padding:30px 0;
+
+color:#64748B;
+
+font-size:15px;
+
+}
+
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+
+@media(max-width:1200px){
+
+.dashboard{
+
+grid-template-columns:1fr;
+
+}
+
+.sidebar{
+
+display:none;
+
+}
+
+.hero,
+
+.dashboard-grid,
+
+.bottom-grid,
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.content{
+
+padding:20px;
+
+}
+
+.topbar{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:20px;
+
+}
+
+.hero-left{
+
+padding:35px;
+
+}
+
+.hero-left h2{
+
+font-size:34px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.chart-bars{
+
+height:180px;
+
+}
+
+}
+
+@media(max-width:520px){
+
+.topbar h1{
+
+font-size:28px;
+
+}
+
+.stat-card{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.quick-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.circle{
+
+width:140px;
+
+height:140px;
+
+}
+
+.circle::before{
+
+width:105px;
+
+height:105px;
+
+}
+
+.value{
+
+font-size:32px;
+
+}
+
+}
+
+.profile{
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+.profile:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================================
+   PROFILE DROPDOWN
+========================================== */
+
+.profile{
+
+    position:relative;
+
+    cursor:pointer;
+
+}
+
+.profile img{
+
+    border-radius:50%;
+
+    transition:.3s;
+
+}
+
+.profile img:hover{
+
+    transform:scale(1.08);
+
+}
+
+.profile-dropdown{
+
+    position:absolute;
+
+    top:70px;
+
+    right:0;
+
+    width:260px;
+
+    background:#fff;
+
+    border-radius:16px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.15);
+
+    padding:18px;
+
+    display:none;
+
+    z-index:1000;
+
+}
+
+.profile-dropdown.show{
+
+    display:block;
+
+}
+
+.profile-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+
+    margin-bottom:12px;
+
+}
+
+.profile-info strong{
+
+    color:#0B4F6C;
+
+    font-size:16px;
+
+}
+
+.profile-info small{
+
+    color:#666;
+
+    word-break:break-word;
+
+}
+
+.profile-dropdown hr{
+
+    border:none;
+
+    border-top:1px solid #eee;
+
+    margin:12px 0;
+
+}
+
+.profile-dropdown button{
+
+    width:100%;
+
+    border:none;
+
+    background:none;
+
+    text-align:left;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.25s;
+
+}
+
+.profile-dropdown button:hover{
+
+    background:#EEF8FA;
+
+}
+
+.profile {
+
+    cursor: pointer;
+}
+
+.profile img {
+
+    transition: transform 0.25s ease;
+}
+
+.profile img:hover {
+
+    transform: scale(1.08);
+}
+
+/* ===========================================
+   DARK MODE
+=========================================== */
+
+body.dark{
+
+background:#0F1B22;
+
+color:#E2F4F3;
+
+}
+
+body.dark .sidebar,
+body.dark .glass-card,
+body.dark .stat-card,
+body.dark .health-score,
+body.dark .icon-btn,
+body.dark .notification-dropdown{
+
+background:rgba(20,35,42,.75);
+
+border-color:rgba(255,255,255,.08);
+
+color:#E2F4F3;
+
+}
+
+body.dark .medicine-item,
+body.dark .activity,
+body.dark .ai-input input,
+body.dark .notification-item{
+
+background:rgba(255,255,255,.06);
+
+color:#E2F4F3;
+
+}
+
+body.dark .sidebar nav a{
+
+color:#B7D3D0;
+
+}
+
+body.dark .sidebar nav a:hover{
+
+background:rgba(255,255,255,.08);
+
+}
+
+/* ===========================================
+   NOTIFICATION DROPDOWN
+=========================================== */
+
+.notification-wrapper{
+
+position:relative;
+
+}
+
+.notification-dropdown{
+
+position:absolute;
+
+top:65px;
+
+right:0;
+
+width:280px;
+
+background:rgba(255,255,255,.95);
+
+backdrop-filter:blur(20px);
+
+border-radius:18px;
+
+box-shadow:var(--shadow);
+
+padding:18px;
+
+display:none;
+
+z-index:10;
+
+}
+
+.notification-dropdown.show{
+
+display:block;
+
+}
+
+.notification-dropdown h4{
+
+color:var(--primary);
+
+margin-bottom:12px;
+
+}
+
+.notification-item{
+
+padding:12px;
+
+border-radius:12px;
+
+margin-bottom:10px;
+
+font-size:14px;
+
+}
+
+.notification-item:last-child{
+
+margin-bottom:0;
+
+}
+
+.health-details{
+    margin-top:20px;
+    width:100%;
+}
+
+.health-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 0;
+    border-top:1px solid rgba(0,0,0,.08);
+    font-size:14px;
+}
+
+.health-item span{
+    color:#64748B;
+}
+
+.health-item strong{
+    color:var(--primary);
+    font-weight:700;
+}
+
+body.dark .health-item{
+    border-color:rgba(255,255,255,.08);
+}
+
+body.dark .health-item span{
+    color:#CBD5E1;
+}
+
+/* ===============================
+   EMPTY STATE
+================================= */
+
+.empty-state{
+
+    text-align:center;
+    color:#64748B;
+    padding:30px 15px;
+    font-size:15px;
+    line-height:1.6;
+
+}
+
+.empty-state i{
+
+    font-size:34px;
+    color:#CBD5E1;
+    margin-bottom:12px;
+    display:block;
+
+}
+
+.chart-bars .bar{
+
+    transition: height .4s ease;
+
+}
+
+.analytics-empty{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+    text-align:center;
+    color:#64748b;
+    gap:10px;
+}
+
+.heart-monitor-note{
+    margin-top:18px;
+    text-align:center;
+    font-size:14px;
+    color:#64748b;
+    line-height:1.5;
+}
+
+.neutral{
+    color:#64748b;
+    font-weight:600;
+}

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Healora | Settings</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet"
+href="../css/settings.css">
+
+</head>
+
+<body>
+
+<div class="background-blobs">
+
+<div class="blob blob1"></div>
+
+<div class="blob blob2"></div>
+
+<div class="blob blob3"></div>
+
+</div>
+
+<div class="settings-layout">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<div class="logo-circle">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+</div>
+
+<h2>Healora</h2>
+
+</div>
+
+<nav>
+
+    <a href="dashboard.html">
+        <i class="fa-solid fa-house"></i>
+        <span>Dashboard</span>
+    </a>
+
+    <a href="chatbot.html">
+        <i class="fa-solid fa-robot"></i>
+        <span>AI Assistant</span>
+    </a>
+
+    <a href="reports.html">
+        <i class="fa-solid fa-file-medical"></i>
+        <span>Reports</span>
+    </a>
+
+    <a href="reminder.html">
+        <i class="fa-solid fa-pills"></i>
+        <span>Medicine</span>
+    </a>
+
+    <a href="appointments.html">
+        <i class="fa-solid fa-calendar-check"></i>
+        <span>Appointments</span>
+    </a>
+
+    
+
+    <a href="profile.html">
+        <i class="fa-solid fa-user"></i>
+        <span>Profile</span>
+    </a>
+
+    <a href="settings.html" class="active">
+        <i class="fa-solid fa-gear"></i>
+        <span>Settings</span>
+    </a>
+
+</nav>
+
+<div class="logout logout-btn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>Logout</span>
+
+</div>
+
+</aside>
+
+<!-- ================= CONTENT ================= -->
+
+<main class="content">
+
+<header class="topbar">
+
+<div>
+
+<h1>
+
+⚙ Settings
+
+</h1>
+
+<p>
+
+Customize your Healora experience.
+
+</p>
+
+</div>
+
+<div class="top-actions">
+
+<button id="notificationBtn" class="icon-btn">
+    <i class="fa-solid fa-bell"></i>
+</button>
+
+<button id="themeBtn" class="icon-btn">
+    <i class="fa-solid fa-moon"></i>
+</button>
+
+<div class="profile-small">
+    <img
+        id="topProfileImage"
+        src="https://ui-avatars.com/api/?name=User&background=0B4F6C&color=fff"
+        alt="Profile">
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero-card">
+
+<div class="hero-text">
+
+<h2>
+
+⚙ Personalize Healora
+
+</h2>
+
+<p>
+
+Manage your appearance, AI preferences, backup options and account settings from one place.
+
+</p>
+
+</div>
+
+<div class="hero-icon">
+
+⚙
+
+</div>
+
+</section>
+
+<!-- ================= QUICK SETTINGS ================= -->
+
+<section class="stats-grid">
+
+<div class="stat-card">
+    <h3>Theme</h3>
+
+    <h2 id="themeStatus">Light</h2>
+
+    <p id="themeSubStatus">Disabled</p>
+</div>
+
+<div class="stat-card">
+    <h3>Backup</h3>
+    <h2 id="backupStatus">--</h2>
+    <p id="backupSubStatus">Loading...</p>
+</div>
+
+<div class="stat-card">
+    <h3>AI Mode</h3>
+    <h2 id="aiModeStatus">--</h2>
+    <p id="aiModeSubStatus">Loading...</p>
+</div>
+
+</section>
+<!-- ================= SETTINGS GRID ================= -->
+
+<section class="settings-grid">
+
+<!-- ================= APPEARANCE ================= -->
+
+<div class="settings-card">
+
+<h2>
+
+🎨 Appearance
+
+</h2>
+
+<div class="setting-item">
+
+<div>
+
+<h4>Dark Mode</h4>
+
+<p>Switch between light and dark theme.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="darkMode">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</div>
+
+<!-- ================= CLOUD BACKUP ================= -->
+
+<div class="settings-card">
+
+    <h2>☁️ Cloud Backup</h2>
+
+    <div class="setting-item">
+
+        <div>
+            <h4>Cloud Backup</h4>
+            <p>Securely store and export your health records.</p>
+        </div>
+
+        <label class="switch">
+            <input type="checkbox" id="cloudBackup">
+            <span class="slider"></span>
+        </label>
+
+    </div>
+
+    <div class="setting-item">
+
+        <button class="secondary-btn">
+            <i class="fa-solid fa-download"></i>
+            Export Health Data
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ================= AI SETTINGS ================= -->
+
+<div class="settings-card">
+
+<h2>
+
+🤖 AI Preferences
+
+</h2>
+
+<div class="setting-item">
+
+<div>
+
+<h4>AI Health Suggestions</h4>
+
+<p>Enable AI-powered health insights and recommendations.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="aiSuggestions">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h4>AI Chat Memory</h4>
+
+<p>Save conversation history for personalized assistance.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="aiMemory">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</div>
+
+<!-- ================= SYSTEM INFORMATION ================= -->
+
+<div class="settings-card">
+
+    <h2>🖥️ System Information</h2>
+
+    <div class="setting-item">
+        <div>
+            <h4>Application Version</h4>
+            <p>v1.0.0</p>
+        </div>
+    </div>
+
+    <div class="setting-item">
+        <div>
+            <h4>AI Engine</h4>
+            <p>Google Gemini</p>
+        </div>
+    </div>
+
+    <div class="setting-item">
+        <div>
+            <h4>Authentication</h4>
+            <p>JWT Secure Login</p>
+        </div>
+    </div>
+
+    <div class="setting-item">
+        <div>
+            <h4>Data Storage</h4>
+            <p>MongoDB Database</p>
+        </div>
+    </div>
+
+    <div class="setting-item">
+        <div>
+            <h4>Platform</h4>
+            <p>Healora Web Application</p>
+        </div>
+    </div>
+
+    <div class="setting-item">
+        <div>
+            <h4>Export Format</h4>
+            <p>JSON (.json)</p>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+<!-- ================= ACCOUNT ACTIONS ================= -->
+
+<section class="danger-zone">
+
+<h2>
+
+⚠️ Account Actions
+
+</h2>
+
+<p>
+Manage your Healora account securely. Some actions cannot be undone.
+</p>
+
+<div class="danger-buttons">
+
+<button id="logoutActionBtn" class="logout-btn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</button>
+
+<button class="delete-btn">
+
+<i class="fa-solid fa-trash"></i>
+
+Delete Account
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= SAVE SETTINGS ================= -->
+
+<section class="save-section">
+    <button class="save-settings">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+        Save Settings
+    </button>
+</section>
+
+<footer class="settings-footer">
+
+<p>
+
+© 2026 Healora • Smart Healthcare Platform
+
+</p>
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="../js/settings.js"></script>
+
+</body>
+
+</html>
+

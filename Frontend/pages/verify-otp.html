@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Healora | Verify OTP</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/auth.css">
+
+</head>
+
+<body>
+
+<div class="auth-background">
+
+<div class="blob blob-one"></div>
+
+<div class="blob blob-two"></div>
+
+<div class="blob blob-three"></div>
+
+</div>
+
+<main class="auth-container">
+
+<section class="auth-brand">
+
+<a href="../index.html" class="auth-logo">
+
+<span class="logo-icon">❤️</span>
+
+Healora
+
+</a>
+
+<div class="brand-content">
+
+<h1>
+
+Verify
+<br>
+OTP
+
+</h1>
+
+<p>
+
+Enter the 6-digit verification code sent to your registered email.
+
+</p>
+
+<div class="health-orb">
+
+<div class="orb-ring"></div>
+
+<div class="orb-core">
+
+🔢
+
+</div>
+
+</div>
+
+<div class="floating-health-card card-one">
+
+📩
+
+<span>
+
+Email OTP
+
+<strong>Sent</strong>
+
+</span>
+
+</div>
+
+<div class="floating-health-card card-two">
+
+🛡️
+
+<span>
+
+Verification
+
+<strong>Secure</strong>
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="auth-card">
+
+<div class="card-header">
+
+<h2>Verify OTP</h2>
+
+<p>
+
+Enter the OTP received in your email.
+
+</p>
+
+</div>
+
+<form id="verifyOtpForm">
+
+<div class="input-group">
+
+<label>OTP</label>
+
+<div class="input-box">
+
+<span>🔢</span>
+
+<input
+
+type="text"
+
+id="otp"
+
+maxlength="6"
+
+placeholder="Enter 6-digit OTP"
+
+required>
+
+</div>
+
+</div>
+
+<p id="otpTimer">
+
+Resend OTP in
+
+<span id="timer">
+
+60
+
+</span>
+
+seconds
+
+</p>
+
+<div id="verifyMessage"></div>
+
+<button
+
+type="submit"
+
+class="auth-btn">
+
+<span>
+
+Verify OTP
+
+</span>
+
+</button>
+
+<button
+
+type="button"
+
+id="resendOtp"
+
+class="google-btn"
+
+disabled>
+
+Resend OTP
+
+</button>
+
+</form>
+
+</section>
+
+</main>
+
+<script src="../js/auth.js"></script>
+
+</body>
+
+</html>

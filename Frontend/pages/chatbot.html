@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Healora AI Assistant</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="../css/chatbot.css">
+
+</head>
+
+<body>
+
+<div class="background-blobs">
+
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+
+</div>
+
+<div class="chat-layout">
+
+<!-- =========================================
+                SIDEBAR
+========================================== -->
+
+<aside class="chat-sidebar">
+
+    <div class="logo">
+
+        <div class="logo-circle">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+        </div>
+
+        <h2>Healora AI</h2>
+
+    </div>
+
+    <button class="new-chat">
+
+        <i class="fa-solid fa-plus"></i>
+
+        <span>New Chat</span>
+
+    </button>
+
+    <div class="sidebar-footer">
+
+        <a href="dashboard.html">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Dashboard
+
+        </a>
+
+    </div>
+
+</aside>
+
+<!-- =========================================
+                MAIN CHAT
+========================================== -->
+
+<main class="chat-main">
+
+<header class="chat-header">
+
+    <div>
+
+        <h1>
+
+            🤖 Healora AI Assistant
+
+        </h1>
+
+        <p>
+
+            Your Personal Healthcare Companion
+
+        </p>
+
+    </div>
+
+    <div class="header-actions">
+
+    <a href="notifications.html"
+       class="icon-btn"
+       id="notificationBtn">
+
+        <i class="fa-solid fa-bell"></i>
+
+        <span id="notificationCount">0</span>
+
+    </a>
+
+    <button class="icon-btn" id="themeBtn">
+
+        <i class="fa-solid fa-moon"></i>
+
+    </button>
+
+    <a href="profile.html" class="profile">
+
+        <img
+            id="userAvatar"
+            src=""
+            alt="Profile">
+
+    </a>
+
+</div>
+</header>
+
+<section class="welcome-card">
+
+    <div class="welcome-content">
+
+        <div class="ai-avatar">
+            🤖
+        </div>
+
+        <h2>
+            Hello,
+            <span id="userName">User</span> 👋
+        </h2>
+
+        <p>
+            I'm Healora AI.
+            Describe your symptoms, upload reports,
+            or ask any healthcare question.
+        </p>
+
+    </div>
+
+</section>
+<!-- =========================================
+                CHAT WINDOW
+========================================== -->
+
+<section
+    class="chat-window"
+    id="chatWindow">
+
+    <!-- Welcome message inserted dynamically -->
+
+</section>
+
+<!-- =========================================
+            SUGGESTED QUESTIONS
+========================================== -->
+
+<section class="suggestions">
+
+    <button class="suggestion-btn">
+        🤒 Fever
+    </button>
+
+    <button class="suggestion-btn">
+        🤧 Cold & Cough
+    </button>
+
+    <button class="suggestion-btn">
+        💊 Medicine Advice
+    </button>
+
+    <button class="suggestion-btn">
+        ❤️ Chest Pain
+    </button>
+
+    <button class="suggestion-btn">
+        🩺 Blood Report
+    </button>
+
+    <button class="suggestion-btn">
+        🥗 Diet Advice
+    </button>
+
+</section>
+
+<!-- =========================================
+            REPORT UPLOAD
+========================================== -->
+
+<section class="upload-card">
+
+    <h3>
+
+        📎 Upload Medical Report
+
+    </h3>
+
+    <p>
+
+        Upload your blood report,
+        prescription,
+        or medical PDF for AI analysis.
+
+    </p>
+
+    <div class="upload-box">
+
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+        <p>
+
+            Drag & Drop or Click to Upload
+
+        </p>
+
+        <input
+            type="file"
+            id="reportUpload"
+            accept=".pdf,.jpg,.jpeg,.png"
+            hidden>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+                CHAT INPUT
+========================================== -->
+
+<section class="chat-input-area">
+
+    <div class="input-tools">
+
+        <button
+            title="Voice"
+            id="voiceBtn">
+
+            <i class="fa-solid fa-microphone"></i>
+
+        </button>
+
+        <button
+            title="Emoji"
+            id="emojiBtn">
+
+            😊
+
+        </button>
+
+        <button
+            id="attachBtn"
+            title="Attachment">
+
+            <i class="fa-solid fa-paperclip"></i>
+
+        </button>
+
+    </div>
+
+    <div class="chat-input">
+
+        <input
+            type="text"
+            id="messageInput"
+            placeholder="Describe your symptoms or ask Healora AI...">
+
+        <button id="sendBtn">
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+            EMERGENCY NOTICE
+========================================== -->
+
+<section class="emergency-banner">
+
+    <div class="emergency-icon">
+
+        🚨
+
+    </div>
+
+    <div class="emergency-content">
+
+        <h3>
+
+            Emergency Assistance
+
+        </h3>
+
+        <p>
+
+            If you are experiencing severe chest pain,
+            breathing difficulty,
+            heavy bleeding,
+            stroke symptoms,
+            or loss of consciousness,
+
+            contact emergency medical services immediately.
+
+            Healora AI cannot replace emergency care.
+
+        </p>
+
+    </div>
+
+    <button class="emergency-btn">
+
+        Emergency Help
+
+    </button>
+
+</section>
+
+<!-- =========================================
+            QUICK HEALTH TOOLS
+========================================== -->
+
+<section class="quick-tools">
+
+    <h2>
+
+        ⚡ Quick Health Tools
+
+    </h2>
+
+    <div class="tool-grid">
+
+        <div class="tool-card">
+
+            <div class="tool-icon">
+
+                💊
+
+            </div>
+
+            <h3>
+
+                Medicine Reminder
+
+            </h3>
+
+            <p>
+
+                Manage daily medicines.
+
+            </p>
+
+        </div>
+
+        <div class="tool-card">
+
+            <div class="tool-icon">
+
+                📄
+
+            </div>
+
+            <h3>
+
+                Medical Reports
+
+            </h3>
+
+            <p>
+
+                Upload and organize reports.
+
+            </p>
+
+        </div>
+
+        <div class="tool-card">
+
+            <div class="tool-icon">
+
+                📅
+
+            </div>
+
+            <h3>
+
+                Appointments
+
+            </h3>
+
+            <p>
+
+                Book doctor appointments.
+
+            </p>
+
+        </div>
+
+        <div class="tool-card">
+
+            <div class="tool-icon">
+
+                ❤️
+
+            </div>
+
+            <h3>
+
+                Health Tracker
+
+            </h3>
+
+            <p>
+
+                Monitor your wellness.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+                FOOTER
+========================================== -->
+
+<footer class="chat-footer">
+
+    <p>
+
+        © 2026 Healora AI • Your Intelligent Healthcare Companion
+
+    </p>
+
+</footer>
+
+</main>
+
+</div>
+
+<!-- =========================================
+            NOTIFICATIONS
+========================================== -->
+
+
+<div id="voicePopup" class="voice-popup">
+
+    <div class="voice-box">
+
+        <div class="voice-icon">
+            🎤
+        </div>
+
+        <h3>Listening...</h3>
+
+        <p>Speak now</p>
+
+    </div>
+
+</div>
+
+<div id="emergencyModal" class="emergency-modal">
+
+    <div class="emergency-box">
+
+        <h2>🚨 Emergency Assistance</h2>
+
+        <p>
+            If you are experiencing severe chest pain,
+            difficulty breathing, heavy bleeding,
+            or loss of consciousness,
+            call your local emergency services immediately.
+        </p>
+
+        <button id="closeEmergency">
+            Close
+        </button>
+
+    </div>
+
+</div>
+<div class="tool-card" 
+onclick="window.location.href='reminder.html'">
+    ...
+</div>
+<script src="../js/chatbot.js"></script>
+
+</body>
+
+</html>

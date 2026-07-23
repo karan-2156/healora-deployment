@@ -1,0 +1,1698 @@
+/* ======================================================
+   HEALORA AUTHENTICATION
+   auth.css
+====================================================== */
+
+/* ---------- GOOGLE FONT ---------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ---------- RESET ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#EEF7F8;
+
+    color:#0B4F6C;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+}
+
+/* ---------- VARIABLES ---------- */
+
+:root{
+
+    --primary:#0B4F6C;
+
+    --secondary:#14B8A6;
+
+    --accent:#6EE7E7;
+
+    --white:#ffffff;
+
+    --text:#14313F;
+
+    --gray:#6B7280;
+
+    --light:#F8FAFC;
+
+    --glass:rgba(255,255,255,.62);
+
+    --glass-border:rgba(255,255,255,.45);
+
+    --shadow:0 20px 60px rgba(11,79,108,.15);
+
+    --radius:30px;
+
+}
+
+/* ======================================================
+   BACKGROUND
+====================================================== */
+
+.auth-background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-5;
+
+    background:
+    radial-gradient(circle at top left,#E8FFFF,transparent 40%),
+    radial-gradient(circle at bottom right,#C8FFF8,transparent 45%),
+    linear-gradient(135deg,#F6FEFF,#EEF7F8);
+
+}
+
+/* ---------- BLOBS ---------- */
+
+.blob{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(60px);
+
+    opacity:.45;
+
+    animation:blobMove 14s ease-in-out infinite;
+
+}
+
+.blob-one{
+
+    width:360px;
+
+    height:360px;
+
+    background:#14B8A6;
+
+    top:-120px;
+
+    left:-120px;
+
+}
+
+.blob-two{
+
+    width:320px;
+
+    height:320px;
+
+    background:#6EE7E7;
+
+    bottom:-90px;
+
+    right:-90px;
+
+    animation-delay:3s;
+
+}
+
+.blob-three{
+
+    width:260px;
+
+    height:260px;
+
+    background:#9FE7FF;
+
+    left:50%;
+
+    top:30%;
+
+    animation-delay:6s;
+
+}
+
+@keyframes blobMove{
+
+    0%{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+    50%{
+
+        transform:translate(40px,-35px) scale(1.12);
+
+    }
+
+    100%{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+}
+
+/* ======================================================
+   MAIN LAYOUT
+====================================================== */
+
+.auth-container{
+
+    width:min(1400px,92%);
+
+    min-height:100vh;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    align-items:center;
+
+    gap:70px;
+
+    padding:50px 0;
+
+}
+
+/* ======================================================
+   LEFT SIDE
+====================================================== */
+
+.auth-brand{
+
+    position:relative;
+
+}
+
+.auth-logo{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    text-decoration:none;
+
+    color:var(--primary);
+
+    font-size:30px;
+
+    font-weight:800;
+
+    margin-bottom:70px;
+
+}
+
+.logo-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+    font-size:24px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.brand-content h1{
+
+    font-size:72px;
+
+    line-height:1.05;
+
+    color:var(--primary);
+
+    margin-bottom:28px;
+
+    font-weight:800;
+
+    letter-spacing:-2px;
+
+}
+
+.brand-content p{
+
+    max-width:560px;
+
+    color:var(--gray);
+
+    font-size:20px;
+
+    line-height:1.9;
+
+}/* ======================================================
+   AI ORB
+====================================================== */
+
+.health-orb{
+
+    position:relative;
+
+    width:280px;
+
+    height:280px;
+
+    margin-top:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.orb-ring{
+
+    position:absolute;
+
+    width:280px;
+
+    height:280px;
+
+    border-radius:50%;
+
+    border:2px dashed rgba(20,184,166,.35);
+
+    animation:rotateRing 18s linear infinite;
+
+}
+
+.orb-ring::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:18px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(11,79,108,.12);
+
+}
+
+.orb-core{
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:58px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+    box-shadow:
+    0 0 60px rgba(20,184,166,.35),
+    0 25px 50px rgba(11,79,108,.20);
+
+    animation:orbFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes rotateRing{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes orbFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ======================================================
+   FLOATING HEALTH CARDS
+====================================================== */
+
+.floating-health-card{
+
+    position:absolute;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    background:rgba(255,255,255,.72);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.5);
+
+    border-radius:22px;
+
+    padding:18px 24px;
+
+    box-shadow:var(--shadow);
+
+    min-width:220px;
+
+    animation:cardFloat 6s ease-in-out infinite;
+
+}
+
+.floating-health-card span{
+
+    display:flex;
+
+    flex-direction:column;
+
+    font-size:14px;
+
+    color:var(--gray);
+
+}
+
+.floating-health-card strong{
+
+    margin-top:4px;
+
+    font-size:17px;
+
+    color:var(--primary);
+
+}
+
+.card-one{
+
+    top:120px;
+
+    right:20px;
+
+}
+
+.card-two{
+
+    bottom:30px;
+
+    left:30px;
+
+    animation-delay:2s;
+
+}
+
+@keyframes cardFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ======================================================
+   DECORATIVE GLOW
+====================================================== */
+
+.auth-brand::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+
+        rgba(20,184,166,.18),
+
+        transparent 70%
+
+    );
+
+    top:80px;
+
+    left:-120px;
+
+    z-index:-1;
+
+}
+
+/* ======================================================
+   ECG LINE
+====================================================== */
+
+.auth-brand::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:10px;
+
+    left:0;
+
+    width:320px;
+
+    height:3px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        var(--secondary),
+        transparent
+    );
+
+    animation:ecgPulse 2s linear infinite;
+
+}
+
+@keyframes ecgPulse{
+
+    0%{
+
+        transform:translateX(-100px);
+
+        opacity:0;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateX(300px);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ======================================================
+   AUTH CARD
+====================================================== */
+
+.auth-card{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    border-radius:32px;
+
+    padding:50px;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ---------- HEADER ---------- */
+
+.card-header{
+
+    margin-bottom:35px;
+
+}
+
+.card-header h2{
+
+    font-size:42px;
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+    font-weight:800;
+
+}
+
+.card-header p{
+
+    color:var(--gray);
+
+    font-size:17px;
+
+    line-height:1.7;
+
+}
+
+/* ---------- FORM ---------- */
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+    color:var(--primary);
+
+}
+
+.input-box{
+
+    display:flex;
+
+    align-items:center;
+
+    background:white;
+
+    border:1px solid #E2E8F0;
+
+    border-radius:18px;
+
+    height:60px;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+.input-box:focus-within{
+
+    border-color:var(--secondary);
+
+    box-shadow:0 0 0 4px rgba(20,184,166,.15);
+
+}
+
+.input-box span{
+
+    width:55px;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+.input-box input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    font-size:16px;
+
+    background:transparent;
+
+    color:var(--text);
+
+    padding-right:15px;
+
+}
+
+.show-password{
+
+    width:55px;
+
+    border:none;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+/* ---------- BUTTONS ---------- */
+
+.auth-btn,
+
+.google-btn{
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.auth-btn{
+
+    margin-top:18px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+}
+
+.auth-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.google-btn{
+
+    margin-top:20px;
+
+    background:white;
+
+    border:1px solid #E2E8F0;
+
+}
+
+.google-btn:hover{
+
+    background:#F8FAFC;
+
+}
+
+.divider{
+
+    margin:28px 0;
+
+    text-align:center;
+
+    color:var(--gray);
+
+}
+
+.switch-page{
+
+    text-align:center;
+
+    margin-top:25px;
+
+}
+
+.switch-page a{
+
+    color:var(--secondary);
+
+    font-weight:700;
+
+    text-decoration:none;
+
+}
+/* ======================================================
+   PART 4
+   ANIMATIONS • RIPPLE • ALERTS • RESPONSIVE
+====================================================== */
+
+
+/* ===============================
+   BUTTON RIPPLE
+================================ */
+
+.auth-btn,
+.google-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.ripple{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    transform:scale(0);
+
+    background:rgba(255,255,255,.45);
+
+    animation:ripple .6s linear;
+
+    pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+    to{
+
+        transform:scale(4);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ===============================
+   INPUT ERROR
+================================ */
+
+.input-box.error input{
+
+    border:2px solid #EF4444;
+
+    box-shadow:0 0 0 4px rgba(239,68,68,.15);
+
+}
+
+.input-box.success input{
+
+    border:2px solid #10B981;
+
+    box-shadow:0 0 0 4px rgba(16,185,129,.15);
+
+}
+
+
+/* ===============================
+   LOADING BUTTON
+================================ */
+
+.auth-btn.loading{
+
+    pointer-events:none;
+
+    opacity:.85;
+
+}
+
+.auth-btn.loading span{
+
+    visibility:hidden;
+
+}
+
+.auth-btn.loading::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:22px;
+
+    height:22px;
+
+    border-radius:50%;
+
+    border:3px solid rgba(255,255,255,.3);
+
+    border-top:3px solid #fff;
+
+    animation:spin .7s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/* ===============================
+   FADE ANIMATION
+================================ */
+
+.auth-brand{
+
+    animation:leftSlide 1s ease;
+
+}
+
+.auth-card{
+
+    animation:rightSlide .9s ease;
+
+}
+
+@keyframes leftSlide{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes rightSlide{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+/* ===============================
+   INPUT HOVER
+================================ */
+
+.input-box{
+
+    transition:.3s;
+
+}
+
+.input-box:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ===============================
+   CUSTOM SCROLLBAR
+================================ */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+
+    var(--primary),
+
+    var(--secondary)
+
+    );
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#EDF7F8;
+
+}
+
+
+/* ===============================
+   TEXT SELECTION
+================================ */
+
+::selection{
+
+    background:var(--secondary);
+
+    color:white;
+
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media(max-width:1200px){
+
+.auth-container{
+
+grid-template-columns:1fr;
+
+gap:50px;
+
+padding:60px 0;
+
+}
+
+.auth-brand{
+
+text-align:center;
+
+}
+
+.brand-content p{
+
+margin:auto;
+
+}
+
+.health-orb{
+
+margin:60px auto;
+
+}
+
+.card-one{
+
+right:10%;
+
+}
+
+.card-two{
+
+left:10%;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.auth-container{
+
+width:94%;
+
+}
+
+.brand-content h1{
+
+font-size:46px;
+
+}
+
+.auth-card{
+
+padding:35px;
+
+}
+
+.card-header h2{
+
+font-size:34px;
+
+}
+
+.form-options{
+
+flex-direction:column;
+
+gap:15px;
+
+align-items:flex-start;
+
+}
+
+}
+
+
+@media(max-width:520px){
+
+.auth-logo{
+
+font-size:24px;
+
+}
+
+.logo-icon{
+
+width:50px;
+
+height:50px;
+
+}
+
+.brand-content h1{
+
+font-size:38px;
+
+}
+
+.auth-card{
+
+padding:25px;
+
+border-radius:24px;
+
+}
+
+.input-box input{
+
+height:54px;
+
+padding:0 52px;
+
+}
+
+.auth-btn,
+
+.google-btn{
+
+height:54px;
+
+}
+
+.health-orb{
+
+width:220px;
+
+height:220px;
+
+}
+
+.orb-ring{
+
+width:220px;
+
+height:220px;
+
+}
+
+.orb-core{
+
+width:120px;
+
+height:120px;
+
+font-size:44px;
+
+}
+
+.floating-health-card{
+
+display:none;
+
+}
+
+}
+/* ==========================================
+   PASSWORD STRENGTH
+========================================== */
+
+.password-strength{
+
+width:100%;
+
+height:8px;
+
+border-radius:20px;
+
+background:#E5E7EB;
+
+margin-top:10px;
+
+overflow:hidden;
+
+}
+
+.password-strength span{
+
+display:block;
+
+height:100%;
+
+width:0%;
+
+background:#EF4444;
+
+transition:.35s;
+
+border-radius:20px;
+
+}
+
+.password-text{
+
+margin-top:8px;
+
+font-size:14px;
+
+color:var(--gray);
+
+}
+
+/* ==========================================
+   CHECKBOX
+========================================== */
+
+.remember input{
+
+width:18px;
+
+height:18px;
+
+accent-color:var(--secondary);
+
+cursor:pointer;
+
+}
+
+/* ==========================================
+   SUCCESS ANIMATION
+========================================== */
+
+.auth-card.success{
+
+animation:successPop .5s ease;
+
+}
+
+@keyframes successPop{
+
+0%{
+
+transform:scale(.95);
+
+}
+
+50%{
+
+transform:scale(1.03);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* ================= PASSWORD STRENGTH ================= */
+
+.password-strength{
+
+margin-top:15px;
+
+}
+
+.strength-bar{
+
+height:8px;
+
+background:#E5E7EB;
+
+border-radius:20px;
+
+overflow:hidden;
+
+}
+
+#strengthFill{
+
+height:100%;
+
+width:0%;
+
+background:#EF4444;
+
+transition:.3s;
+
+}
+
+#strengthText{
+
+margin-top:8px;
+
+font-size:14px;
+
+font-weight:600;
+
+color:#64748B;
+
+}
+
+
+/* ======================================================
+   PASSWORD FEEDBACK
+====================================================== */
+
+.password-feedback{
+
+    margin-top:12px;
+
+}
+
+.password-strength{
+
+    margin-bottom:12px;
+
+    opacity:0;
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:.35s ease;
+
+}
+
+.password-feedback.active .password-strength{
+
+    opacity:1;
+
+    max-height:60px;
+
+}
+
+.strength-bar{
+
+    width:100%;
+
+    height:8px;
+
+    background:#E5E7EB;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+#strengthFill{
+
+    width:0%;
+
+    height:100%;
+
+    background:#EF4444;
+
+    transition:width .35s ease,
+               background .35s ease;
+
+}
+
+#strengthText{
+
+    margin-top:8px;
+
+    text-align:right;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.password-rules{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:8px 18px;
+
+    padding:14px;
+
+    background:#F8FAFC;
+
+    border:1px solid #E2E8F0;
+
+    border-radius:14px;
+
+    opacity:0;
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transform:translateY(-10px);
+
+    transition:.35s ease;
+
+}
+
+.password-feedback.active .password-rules{
+
+    opacity:1;
+
+    max-height:220px;
+
+    transform:translateY(0);
+
+}
+
+.password-rules p{
+
+    margin:0;
+
+    font-size:13px;
+
+    color:#64748B;
+
+    transition:.25s;
+
+}
+
+.password-rules p.valid{
+
+    color:#10B981;
+
+    font-weight:600;
+
+}
+
+.password-feedback.completed .password-rules{
+
+    opacity:0;
+
+    max-height:0;
+
+    padding:0;
+
+    border:none;
+
+    margin:0;
+
+}
+
+/* ===============================
+   CONFIRM PASSWORD
+=============================== */
+
+.confirm-message{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    min-height:18px;
+
+    transition:.3s;
+
+}
+
+.confirm-message.success{
+
+    color:#10B981;
+
+}
+
+.confirm-message.error{
+
+    color:#EF4444;
+
+}
+
+
+/* ===========================================
+   FORM MESSAGE
+=========================================== */
+
+.form-message{
+
+    display:none;
+
+    margin:15px 0;
+
+    padding:12px 16px;
+
+    border-radius:12px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+.form-message.show{
+
+    display:block;
+
+}
+
+.form-message.error{
+
+    background:#FEF2F2;
+
+    color:#DC2626;
+
+    border:1px solid #FECACA;
+
+}
+
+.form-message.success{
+
+    background:#ECFDF5;
+
+    color:#059669;
+
+    border:1px solid #A7F3D0;
+
+}
+
+/* ===========================================
+   TOAST MESSAGE
+=========================================== */
+
+.toast{
+
+    position:fixed;
+
+    top:18px;
+
+    left:50%;
+
+    transform:translateX(-50%) translateY(-20px);
+
+    width:max-content;
+    max-width:420px;
+
+    padding:14px 20px;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    text-align:center;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.18);
+
+    z-index:9999;
+
+    opacity:0;
+
+    transition:.35s ease;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:translateX(-50%) translateY(0);
+
+}
+
+.toast.success{
+
+    background:#ECFDF5;
+
+    color:#047857;
+
+    border:1px solid #A7F3D0;
+
+}
+
+.toast.error{
+
+    background:#FEF2F2;
+
+    color:#DC2626;
+
+    border:1px solid #FECACA;
+
+}
+
+.password-strength {
+    display: block !important;
+    margin: 20px 0 !important;
+    border: 2px solid red;
+}
+
+.strength-bar {
+    display: block !important;
+    height: 12px !important;
+    background: #ddd !important;
+}
+
+.strength-fill {
+    display: block !important;
+}
+
+.password-strength.active{
+
+    opacity:1;
+    max-height:120px;
+    margin-top:12px;
+
+}
+
+/* ===========================
+   GOOGLE BUTTON
+=========================== */
+
+.google-btn-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+#googleButton{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#googleButton > div{
+    margin: 0 auto !important;
+}
+
+.divider{
+    display:flex;
+    align-items:center;
+    margin:24px 0;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:#d8dee9;
+}
+
+.divider span{
+    padding:0 18px;
+    color:#6b7280;
+    font-weight:600;
+}

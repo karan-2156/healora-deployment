@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Healora | Notifications</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet"
+href="../css/notifications.css">
+
+</head>
+
+<body>
+
+<div class="background-blobs">
+
+<div class="blob blob1"></div>
+
+<div class="blob blob2"></div>
+
+<div class="blob blob3"></div>
+
+</div>
+
+<div class="notification-layout">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<div class="logo-circle">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+</div>
+
+<h2>Healora</h2>
+
+</div>
+
+<nav>
+
+<a href="dashboard.html">
+<i class="fa-solid fa-house"></i>
+<span>Dashboard</span>
+</a>
+
+<a href="chatbot.html">
+<i class="fa-solid fa-robot"></i>
+<span>AI Assistant</span>
+</a>
+
+<a href="reports.html">
+<i class="fa-solid fa-file-medical"></i>
+<span>Reports</span>
+</a>
+
+<a href="reminder.html">
+<i class="fa-solid fa-bell"></i>
+<span>Reminders</span>
+</a>
+
+<a href="appointments.html">
+<i class="fa-solid fa-calendar-check"></i>
+<span>Appointments</span>
+</a>
+
+<a href="symptom-checker.html">
+<i class="fa-solid fa-stethoscope"></i>
+<span>Symptom Checker</span>
+</a>
+
+<a href="notifications.html" class="active">
+<i class="fa-solid fa-envelope-open-text"></i>
+<span>Notifications</span>
+</a>
+
+<a href="profile.html">
+<i class="fa-solid fa-user"></i>
+<span>Profile</span>
+</a>
+
+<a href="settings.html">
+<i class="fa-solid fa-gear"></i>
+<span>Settings</span>
+</a>
+
+</nav>
+
+<div class="logout">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>Logout</span>
+
+</div>
+
+</aside>
+
+<!-- ================= CONTENT ================= -->
+
+<main class="content">
+
+<header class="topbar">
+
+<div>
+
+<h1>🔔 Notifications</h1>
+
+<p>
+
+Stay updated with your appointments, medicines and AI alerts.
+
+</p>
+
+</div>
+
+<div class="top-actions">
+
+
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+<button class="icon-btn" id="themeBtn">
+    <i class="fa-solid fa-moon"></i>
+</button>
+    <div class="profile-small">
+    <img src="../assets/avatars/default.avatar.png" alt="Profile">
+</div>
+
+
+</div>
+
+</header>
+
+<!-- ================= TODAY ================= -->
+
+<section class="notification-card unread">
+  
+<div class="icon success">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+</div>
+
+<div class="notification-content">
+
+<h3>Appointment Confirmed</h3>
+
+<p>
+
+Your appointment with <strong>Dr. Sarah Johnson</strong> has been confirmed for tomorrow at <strong>10:30 AM</strong>.
+
+</p>
+
+<span>5 minutes ago</span>
+
+</div>
+
+</section>
+
+<section class="notification-card unread">
+
+<div class="icon warning">
+
+<i class="fa-solid fa-pills"></i>
+
+</div>
+
+<div class="notification-content">
+
+<h3>Medicine Reminder</h3>
+
+<p>
+
+Time to take your Vitamin D tablet.
+
+</p>
+
+<span>20 minutes ago</span>
+
+</div>
+
+</section>
+
+<section class="notification-card">
+
+<div class="icon ai">
+
+<i class="fa-solid fa-robot"></i>
+
+</div>
+
+<div class="notification-content">
+
+<h3>AI Health Suggestion</h3>
+
+<p>
+
+Your recent symptoms indicate you should schedule a follow-up with a General Physician.
+
+</p>
+
+<span>1 hour ago</span>
+
+</div>
+
+</section>
+
+<section class="notification-card">
+
+<div class="icon report">
+
+<i class="fa-solid fa-file-medical"></i>
+
+</div>
+
+<div class="notification-content">
+
+<h3>Lab Report Uploaded</h3>
+
+<p>
+
+Your blood test report has been successfully uploaded.
+
+</p>
+
+<span>Yesterday</span>
+
+</div>
+
+</section>
+<!-- ================= QUICK ACTIONS ================= -->
+
+<section class="action-panel">
+
+<h2>⚡ Quick Actions</h2>
+
+<div class="action-buttons">
+
+<button class="mark-read-btn">
+
+<i class="fa-solid fa-check-double"></i>
+
+Mark All as Read
+
+</button>
+
+<button class="delete-btn">
+
+<i class="fa-solid fa-trash"></i>
+
+Delete All
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= PREFERENCES ================= -->
+
+<section class="preferences-card">
+
+<h2>
+
+⚙ Notification Preferences
+
+</h2>
+
+<div class="preference">
+
+<div>
+
+<h3>Medicine Reminders</h3>
+
+<p>Receive reminders for your scheduled medicines.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="preference">
+
+<div>
+
+<h3>Appointment Notifications</h3>
+
+<p>Get updates about bookings and reschedules.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="preference">
+
+<div>
+
+<h3>AI Health Suggestions</h3>
+
+<p>Receive AI-generated health recommendations.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="preference">
+
+<div>
+
+<h3>Email Notifications</h3>
+
+<p>Receive notifications on your registered email.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</section>
+
+<!-- ================= EMPTY STATE ================= -->
+
+<section class="empty-card">
+
+<i class="fa-regular fa-bell-slash"></i>
+
+<h2>No More Notifications</h2>
+
+<p>
+
+You're all caught up! New notifications will appear here.
+
+</p>
+
+</section>
+
+<script src="../js/notifications.js"></script>
+
+</main>
+
+</div>
+
+</body>
+
+</html>

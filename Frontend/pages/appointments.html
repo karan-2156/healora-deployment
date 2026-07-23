@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Healora | Appointments</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet"
+href="../css/appointments.css">
+
+</head>
+
+<body>
+
+<div class="background-blobs">
+
+<div class="blob blob1"></div>
+
+<div class="blob blob2"></div>
+
+<div class="blob blob3"></div>
+
+</div>
+
+<div class="appointments-layout">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<div class="logo-circle">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+</div>
+
+<h2>Healora</h2>
+
+</div>
+
+<nav>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+<a href="chatbot.html">
+
+<i class="fa-solid fa-robot"></i>
+
+<span>AI Assistant</span>
+
+</a>
+
+<a href="reports.html">
+
+<i class="fa-solid fa-file-medical"></i>
+
+<span>Reports</span>
+
+</a>
+
+<a href="reminder.html">
+
+<i class="fa-solid fa-bell"></i>
+
+<span>Reminders</span>
+
+</a>
+
+<a href="appointments.html" class="active">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+<span>Appointments</span>
+
+</a>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+<span>Profile</span>
+
+</a>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</nav>
+
+<<div class="logout" id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>Logout</span>
+
+</div>
+
+</aside>
+
+<!-- ================= CONTENT ================= -->
+
+<main class="content">
+
+<header class="topbar">
+
+<div>
+
+<h1>
+
+📅 Doctor Appointments
+
+</h1>
+
+<p>
+
+Book, manage and track your medical appointments.
+
+</p>
+
+</div>
+
+<div class="top-actions">
+
+<button class="icon-btn" id="notificationBtn">
+    <i class="fa-solid fa-bell"></i>
+</button>
+
+<button class="icon-btn">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+<div class="profile-small">
+
+<img src="../assets/avatars/default-avatar.png"
+alt="Profile">
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero-card">
+
+<div class="hero-text">
+
+<h2>
+
+Book Your Doctor in Minutes
+
+</h2>
+
+<p>
+
+Choose from experienced specialists, view available slots, receive AI recommendations, and manage appointments with ease.
+
+</p>
+
+<button class="book-btn">
+
+<i class="fa-solid fa-calendar-plus"></i>
+
+Book Appointment
+
+</button>
+
+</div>
+
+<div class="hero-icon">
+
+🩺
+
+</div>
+
+</section>
+
+<!-- ================= SEARCH ================= -->
+
+<section class="search-section">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+placeholder="Search doctor, specialization or hospital...">
+
+</div>
+
+<div class="filter-group">
+
+<select>
+
+<option>All Specializations</option>
+
+<option>Cardiologist</option>
+
+<option>Dermatologist</option>
+
+<option>Neurologist</option>
+
+<option>Pediatrician</option>
+
+<option>Orthopedic</option>
+
+<option>Dentist</option>
+
+</select>
+
+</div>
+
+</section>
+<!-- ================= DOCTORS ================= -->
+
+<section class="doctor-section">
+
+<div class="section-title">
+
+<h2>👨‍⚕ Available Doctors</h2>
+
+<p>Choose a specialist and book your appointment instantly.</p>
+
+</div>
+
+<div class="doctor-grid">
+
+<!-- Doctor 1 -->
+
+<div class="doctor-card">
+
+<div class="doctor-top">
+
+<img src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=14B8A6&color=fff&size=200" alt="Doctor">
+
+<span class="status available">
+
+● Available
+
+</span>
+
+</div>
+
+<h3>Dr. Sarah Johnson</h3>
+
+<p class="speciality">
+
+<i class="fa-solid fa-stethoscope"></i>
+
+Cardiologist
+
+</p>
+
+<p class="hospital">
+
+<i class="fa-solid fa-hospital"></i>
+
+Apollo Hospital
+
+</p>
+
+<div class="doctor-info">
+
+<span>
+
+⭐ 4.9
+
+</span>
+
+<span>
+
+💬 450 Reviews
+
+</span>
+
+</div>
+
+<div class="doctor-footer">
+
+<h4>₹800</h4>
+
+<button class="book-now">
+
+Book Now
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Doctor 2 -->
+
+<div class="doctor-card">
+
+<div class="doctor-top">
+
+<img src="https://ui-avatars.com/api/?name=Amit+Sharma&background=2563EB&color=fff&size=200" alt="Doctor">
+
+<span class="status available">
+
+● Available
+
+</span>
+
+</div>
+
+<h3>Dr. Amit Sharma</h3>
+
+<p class="speciality">
+
+<i class="fa-solid fa-brain"></i>
+
+Neurologist
+
+</p>
+
+<p class="hospital">
+
+<i class="fa-solid fa-hospital"></i>
+
+Fortis Hospital
+
+</p>
+
+<div class="doctor-info">
+
+<span>
+
+⭐ 4.8
+
+</span>
+
+<span>
+
+💬 390 Reviews
+
+</span>
+
+</div>
+
+<div class="doctor-footer">
+
+<h4>₹1000</h4>
+
+<button class="book-now">
+
+Book Now
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Doctor 3 -->
+
+<div class="doctor-card">
+
+<div class="doctor-top">
+
+<img src="https://ui-avatars.com/api/?name=Priya+Mehta&background=8B5CF6&color=fff&size=200" alt="Doctor">
+
+<span class="status busy">
+
+● Busy
+
+</span>
+
+</div>
+
+<h3>Dr. Priya Mehta</h3>
+
+<p class="speciality">
+
+<i class="fa-solid fa-child"></i>
+
+Pediatrician
+
+</p>
+
+<p class="hospital">
+
+<i class="fa-solid fa-hospital"></i>
+
+Max Healthcare
+
+</p>
+
+<div class="doctor-info">
+
+<span>
+
+⭐ 4.7
+
+</span>
+
+<span>
+
+💬 280 Reviews
+
+</span>
+
+</div>
+
+<div class="doctor-footer">
+
+<h4>₹700</h4>
+
+<button class="book-now">
+
+Book Now
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Doctor 4 -->
+
+<div class="doctor-card">
+
+<div class="doctor-top">
+
+<img src="https://ui-avatars.com/api/?name=Neha+Kapoor&background=F97316&color=fff&size=200" alt="Doctor">
+
+<span class="status available">
+
+● Available
+
+</span>
+
+</div>
+
+<h3>Dr. Neha Kapoor</h3>
+
+<p class="speciality">
+
+<i class="fa-solid fa-tooth"></i>
+
+Dentist
+
+</p>
+
+<p class="hospital">
+
+<i class="fa-solid fa-hospital"></i>
+
+Smile Care Clinic
+
+</p>
+
+<div class="doctor-info">
+
+<span>
+
+⭐ 4.9
+
+</span>
+
+<span>
+
+💬 510 Reviews
+
+</span>
+
+</div>
+
+<div class="doctor-footer">
+
+<h4>₹600</h4>
+
+<button class="book-now">
+
+Book Now
+
+</button>
+
+</div>
+</section>
+
+
+
+
+<section class="appointments-section">
+
+    <div class="section-title">
+
+        <h2>📅 My Appointments</h2>
+
+        <p>Your upcoming and previous appointments.</p>
+
+    </div>
+
+    <div id="appointmentsContainer">
+
+        <p>No appointments booked yet.</p>
+
+    </div>
+
+</section>
+
+</main>
+
+</div>
+
+
+<div id="notificationPanel" class="notification-panel">
+
+    <h3>🔔 Notifications</h3>
+
+    <div id="notificationList">
+
+        <p>No notifications yet.</p>
+
+    </div>
+
+</div>
+
+<script src="../js/appointments.js"></script>
+
+</body>
+
+</html>
